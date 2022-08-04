@@ -35,7 +35,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         scene.getStylesheets().add("styles.css");
-        Dispatcher dispatcher = new Dispatcher(calendarBody, spinner, comboBox, labelYear);
+        Dispatcher dispatcher = new Dispatcher(spinner, comboBox, labelYear, calendarBody);
         dispatcher.initialize();
 
         leftSide.setMinWidth(700);

@@ -19,7 +19,7 @@ public class Calendar {
         monthsWith30Days.add(Month.NOVEMBER);
     }
 
-    public int daysOfMonth() {
+    public int daysInMonth() {
         return getNumberOfDaysInMonth(currentMonth);
     }
 

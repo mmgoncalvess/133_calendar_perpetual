@@ -6,7 +6,7 @@ public class WeekFactory {
     private int dayCount = 0;
 
     public WeekFactory(Calendar calendar) {
-        this.maxNumber = calendar.daysOfMonth();
+        this.maxNumber = calendar.daysInMonth();
         this.initialWeekDay = calendar.startDay();
     }
 

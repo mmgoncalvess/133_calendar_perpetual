@@ -6,18 +6,18 @@ import javafx.scene.control.Spinner;
 import javafx.scene.layout.VBox;
 
 public class Dispatcher {
-    private final VBox calendarBody;
     private final Spinner<Integer> spinner;
     private final ComboBox<Month> comboBox;
     private final Calendar calendar;
     private final Label labelYear;
+    private final VBox calendarBody;
 
-    public Dispatcher(VBox calendarBody, Spinner<Integer> spinner, ComboBox<Month> comboBox, Label labelYear) {
-        this.calendarBody = calendarBody;
+    public Dispatcher(Spinner<Integer> spinner, ComboBox<Month> comboBox, Label labelYear, VBox calendarBody) {
         this.spinner = spinner;
         this.comboBox = comboBox;
         this.labelYear = labelYear;
         this.calendar = new Calendar();
+        this.calendarBody = calendarBody;
     }
 
     public void initialize() {
@@ -31,9 +31,9 @@ public class Dispatcher {
     private void handler() {
         Month month = comboBox.getValue();
         int year = spinner.getValue();
-        labelYear.setText(month.name() + " " + year);
         calendar.setCurrentMonth(month);
         calendar.setCurrentYear(year);
+        labelYear.setText(month.name() + " " + year);
         labelFactory();
     }
 
